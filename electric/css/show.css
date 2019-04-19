@@ -1,0 +1,314 @@
+﻿@charset"utf-8";
+/*自定义分页符样式*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.all{
+    overflow: hidden;
+}
+.show{
+    width:1920px;
+    height:810px;
+    background: url("../images/index/beijing.jpg") no-repeat;
+    background-size:100% 100%;
+}
+.top-content{
+    width:1920px;
+    height:810px;
+}
+/*头部*/
+.toubu{
+    width:1920px;
+    position: relative;
+    overflow: hidden;
+}
+.toubu>img{
+    width: 100%;
+}
+.toubu .logo{
+    display: flex;
+    position: absolute;
+    left:5%;
+    top:20%;
+    color:white;
+}
+.toubu .logo h1{
+    font-size: 20px;
+    margin: 5px 0;
+}
+.toubu .logo h2{
+    font-size: 12px;
+}
+.toubu .fenbu{
+    position: absolute;
+    top:10%;
+    left:44%;
+    color:white;
+}
+.toubu .fenbu h1{
+    font-size: 30px;
+    margin:5px 0;
+}
+.toubu .fenbu h2{
+    font-size: 15px;
+}
+/*时间日期温度*/
+.youce{
+    position: absolute;
+    top:40%;
+    right:2%;
+    color:white;
+    display: flex;
+    /*justify-content: space-between;*/
+}
+.youce ul li{
+    float: left;
+}
+.youce ul li:first-child{
+    font-size: 30px;
+    margin-right:30px;
+}
+.youce ul li:last-child{
+    text-align: right;
+}
+.youce>div{
+    font-size: 30px;
+    margin-left:70px;
+}
+
+/*中间内容*/
+.show-chart{
+    position: relative;
+    width: 1920px;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+.show-chartActive{
+    height:480px !important;
+    transition: all 0.5s ease-in-out;
+}
+/*地图*/
+.map{
+    height: 100%;
+    width: 1920px;
+    overflow: hidden;
+}
+/*地图提示框*/
+/*地图提示框*/
+#tz-map>div:nth-child(2) {
+    /*background: url("../images/index/tsk.png") no-repeat;*/
+    background-position: 100% 100%;
+    width:265px;
+    text-align: left;
+    /*padding:25px 40px!important;*/
+}
+#tz-map>div:nth-child(2) i:last-child{
+    background: url("../images/index/tsk02.png") no-repeat !important;
+    background-position: 100% 100%;
+    /*background-color: yellow;*/
+}
+#tz-map>div:nth-child(2) i:first-child{
+    /*margin-top:20px;*/
+    background: url("../images/index/tsk01.png") no-repeat !important;
+    background-position: 100% 100%;
+    /*background-color: red;*/
+}
+#tz-map>div:nth-child(2) i{
+    /*padding:50px 40px!important;*/
+    /*width:100%;*/
+    height:50px;
+    display: block;
+    /*width: 10px;height: 10px;*/
+}
+
+#tz-map>div:nth-child(2) span{
+    /*width:90%;*/
+    /*display: block;*/
+    /*flex-wrap: wrap;*/
+    display: inline-block;
+    width: 80%;
+    margin-left:30px;
+    white-space:normal !important;
+    overflow: hidden;
+}
+
+/*左边部分*/
+.left-content{
+    position: absolute;
+    bottom:15%;
+    width:21%;
+    height:43%;
+    left:5%;
+    transition: all 0.5s ease-in-out;
+}
+.left-contentActive{
+    bottom:33% !important;
+    transition: all 0.5s ease-in-out;
+}
+.left-content>div{
+    margin-bottom: 20px;
+}
+/*.left-content:after{*/
+    /*content:"";*/
+    /*display: block;*/
+    /*clear: both;*/
+/*}*/
+/*左边内容*/
+.b1,.b2,.b3,.b4{
+    width:400px;
+    height:70px;
+    /*position: absolute;*/
+    /*left:18%;*/
+    padding:10px 0 10px 30px;
+}
+.b1{
+    /*top:-26%;*/
+    border:1px solid #8fafca;
+    /*border-left:12px solid #5db6ee;*/
+    /*background-color: #29364d;*/
+    background: url("../images/index/bk1.jpg") no-repeat;
+}
+.b2{
+    /*top:5%;*/
+    border:1px solid #8fafca;
+    /*border-left:12px solid #83d097;*/
+    /*background-color: #29364d;*/
+    background: url("../images/index/bk2.jpg") no-repeat;
+}
+.b3{
+    /*bottom:40%;*/
+    border:1px solid #8fafca;
+    /*border-left:12px solid #dcbf70;*/
+    /*background-color: #29364d;*/
+    background: url("../images/index/bk3.jpg") no-repeat;
+}
+.b4{
+    /*bottom:10%;*/
+    border:1px solid #8fafca;
+    /*border-left:12px solid #5d7cee;*/
+    /*background-color: #29364d;*/
+    background: url("../images/index/bk4.jpg") no-repeat;
+}
+.iconfont{
+    color:white;
+    font-size: 30px;
+}
+.zt{
+    color:white;
+    font-size: 20px;
+    margin:0 40px 0 20px;
+}
+.sz1,.sz2,.sz3,.sz4{
+    font-size: 20px;
+    font-weight: bold;
+    margin-right:10px;
+}
+.dw1,.dw2,.dw3,.dw4{
+    font-size: 16px;
+}
+.sz1,.dw1{color:#5db6ee;}
+.sz2,.dw2{color:#83d097;}
+.sz3,.dw3{color:#dcbf70;}
+.sz4,.dw4{color:#5d7cee;}
+/*右边部分*/
+.right-content{
+    position: absolute;
+    bottom: 56%;
+    width: 21%;
+    height: 43%;
+    right: -3%;
+    transform: translate(100%, 0);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+.r1,.r2,.r3,.r4,.r5,.r6{
+    width:283px;
+    height:52px;
+    background: url("../images/index/right.png") no-repeat;
+}
+.right-content>div{
+    margin-bottom: 18px;
+}
+/*.r1{ margin-bottom: 20px }*/
+/*.r2{  }*/
+/*.r3{  }*/
+/*.r4{  }*/
+/*.r5{  }*/
+/*.r6{  }*/
+.qy{
+    color:#dde8fb;
+    font-size: 18px;
+    display: block;
+    padding-top:12px;
+    text-align: center;
+}
+.fh{
+    color:#dde8fb;
+    font-size: 16px;
+    display: block;
+    padding-top:12px;
+    /*text-align: center;*/
+}
+.right-contentActive{
+    transform: translate(0, 0);
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+}
+/*柱状图*/
+.category{
+    width:1920px;
+    height:260px;
+    padding:17px 30px 25px 30px;
+    background-color:rgba(12,15,22,.5);
+    display: flex;
+    justify-content: flex-start;
+    transform: translate(0, 100%);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    /*display: none;*/
+}
+.return{
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.categoryActive {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.r7{
+    display: flex;
+    justify-content: center;
+}
+/*柱状图1*/
+.data1{
+    width:580px;
+    height:220px;
+    margin-right:6px;
+    background: url("../images/index/category1.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+/*柱状图2*/
+.data2{
+    width:790px;
+    height:220px;
+    margin-right:6px;
+    background: url("../images/index/category2.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+/*饼状图3*/
+.data3{
+    width:470px;
+    height:220px;
+    margin-right:6px;
+    background: url("../images/index/pie.png") no-repeat;
+    background-size: 100% 100%;
+}
+.count{
+    color:#dde8fb;
+    font-size: 16px;
+    display: block;
+    padding-top:12px;
+    /*text-align: center;*/
+}

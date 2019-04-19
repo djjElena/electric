@@ -1,0 +1,149 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" /><!--添加到主屏幕后全屏显示-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--控制条块状黑色-->
+    <meta content="telephone=no" name="format-detection" /><!--禁止数字转拨号-->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/show.css">
+    <script src="js/jquery.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- 百度地图 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nxW0akynjKF8Ag0G0uVVwq0t6ak1Q1Zj"></script>
+</head>
+<body>
+<div class="all">
+    <div class="show">
+        <div class="top-content">
+            <!-- 导航栏-->
+            <div class="toubu">
+                <img src="images/index/bg.jpg" alt=""/>
+                <!-- logo-->
+                <div class="logo">
+                    <img src="images/index/logo.png" alt=""/>
+                    <div>
+                        <h1>中国电建集团国际工程有限公司</h1>
+                        <h2>POWERCHINA INTERNATIONAL GROUP LIMITED</h2>
+                    </div>
+                </div>
+                <div class="fenbu">
+                    <h1>电建国际全球市场分布</h1>
+                    <h2>POWERCHINA-INTL GLOBALPROJECT MAP</h2>
+                </div>
+                <!-- 时间日期温度-->
+                <div class="youce">
+                    <ul>
+                        <li class='getTime' ></li>
+                        <li>
+                            <p class='getWeek' ></p>
+                            <p class='getDate'></p>
+                        </li>
+                    </ul>
+                    <div>-10℃</div>
+                </div>
+            </div>
+            <!-- 内容主体-->
+            <div class="show-chart">
+                <!-- 地图-->
+                <div class="map" id="tz-map"></div>
+                <!-- 左侧-->
+                <div class="left-content">
+                    <!-- 左下角-->
+                    <div class="b1">
+                        <i class="iconfont icon-jigou"></i>
+                        <span class="zt">驻外机构：</span><span class="sz1">214</span><span class="dw1">个</span>
+                        <div class="sanjiao"></div>
+                    </div>
+                    <div class="b2">
+                        <i class="iconfont icon-shigongzhong"></i>
+                        <span class="zt">在建项目：</span><span class="sz2">1,200</span><span class="dw2">个</span>
+                    </div>
+                    <div class="b3">
+                        <i class="iconfont icon-muluxiangmu"></i>
+                        <span class="zt">市场项目：</span><span class="sz3">1,280</span><span class="dw3">个</span>
+                    </div>
+                    <div class="b4">
+                        <i class="iconfont icon-hetong"></i>
+                        <span class="zt">合同总量：</span><span class="sz4">2,800</span><span class="dw4">亿元</span>
+                    </div>
+                </div>
+                <!-- 右侧-->
+                <div class="right-content">
+                    <!-- 右侧内容-->
+                    <div class="r1">
+                        <span class="qy">美洲区域分布</span>
+                    </div>
+                    <div class="r2">
+                        <span class="qy">欧亚区域分布</span>
+                    </div>
+                    <div class="r3">
+                        <span class="qy">中东北非区域分布</span>
+                    </div>
+                    <div class="r4">
+                        <span class="qy">中西非区域分布</span>
+                    </div>
+                    <div class="r5">
+                        <span class="qy">东南非区域分布</span>
+                    </div>
+                    <div class="r6">
+                        <span class="qy">亚太区域分布</span>
+                    </div>
+                    <div class="r6 r7">
+                        <p class="fh">返回</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="count">区域总额</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 柱状图-->
+            <div class="category">
+                <!-- 柱形图1-->
+                <div class="data1" id="category1"></div>
+                <!-- 柱形图2-->
+                <div class="data2" id="category2"></div>
+                <!-- 饼状图3-->
+                <div class="data3" id="pie"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/world.js"></script>
+<script type="text/javascript" src="js/indexditu.js"></script>
+<script type="text/javascript" src="js/category1.js"></script>
+<script type="text/javascript" src="js/category2.js"></script>
+<script type="text/javascript" src="js/pie.js"></script>
+<script type="text/javascript">
+    // 计算时间
+    (function(){
+        var date = new Date()
+        var Seconds = date.getTime()
+        var week = ['一', '二', '三', '四', '五', '六', '日']
+        $('.getDate').eq(0).text(date.toLocaleDateString().replace(/\//g, '-'))
+        $('.getWeek').eq(0).text('星期' + week[date.getDay() - 1])
+        $('.getTime').eq(0).text(computed(Seconds))
+        setInterval(function(){
+            Seconds+= 1000
+            $('.getTime').eq(0).text(computed(Seconds))
+        },1000)
+        function computed(time) {
+            var date = new Date(time),
+                    hours = date.getHours(),
+                    minutes = date.getMinutes(),
+                    second = date.getSeconds();
+            return (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes)
+                    + ':' + (second < 10 ? '0' + second : second)
+        }
+    })()
+</script>
+</body>
+</html>

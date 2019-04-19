@@ -1,0 +1,19 @@
+{
+  "editor.tabSize": 2,
+  "window.zoomLevel": 2,
+  "background.style": {
+    "content": "''",
+    "pointer-events": "none",
+    "position": "fixed",
+    "z-index": "99999",
+    "width": "100%",
+    "height": "100%",
+    "left": "0%",
+    "top":"00%",
+    "background-position": "100% 100%",
+    "background-repeat": "no-repeat",
+    "opacity": 1,
+    "background.customImages": ["file:///E:/img/timg.png"]
+  },
+  "background.useDefault": false,
+}
